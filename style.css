@@ -1,0 +1,355 @@
+/* =========================
+   LEK-10 Reisen & Flugziele
+   ========================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: linear-gradient(100deg, rgb(249, 178, 131) 0%, rgb(237, 130, 123) 50%, rgb(217, 154, 253) 100%);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: #333;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+a {
+    text-decoration: none;
+    color: #fefefe;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+h1, h2, h3 {
+    line-height: 1.25rem;
+    margin-bottom: 0.75rem;
+}
+
+h1 {
+    font-size: 2.4rem;
+}
+
+h2 {
+    font-size: 1.8rem;
+}
+
+h3 {
+    font-size: 1.35rem;
+}
+
+p {
+    margin-bottom: 0.8rem;
+}
+
+ul, ol {
+    margin: 0 0 1.25rem 1.25rem;
+}
+
+
+
+
+
+.container {
+    max-width: min(100% - 2.5rem, 1100px);
+    margin: auto;
+}
+
+.section,
+.section-alt {
+    margin: 3.25rem 0;
+}
+
+
+
+
+
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 2px groove #fefefe;
+    box-shadow: 0 2px 10px rgba(194, 192, 192, 0.3);
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+[id] {
+    scroll-margin-top: 5.5rem;
+}
+
+.header-inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    /* padding-top: 1rem;
+    padding-bottom: 0.8rem; */
+    padding: 1rem 0 0.8rem 1rem;
+}
+
+.logo {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 0.5rem 0.8rem;
+    border-radius: 12px 0;
+}
+
+.logo a {
+    font-size: 1.3rem;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: 700;
+    color: rgb(249, 178, 131); 
+}
+
+.logo a span {
+    color: #fefefe;
+    font-weight: 550;
+}
+
+.logo a:hover {
+    text-decoration: none;
+}
+
+/*.main-nav*/ .menu {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem 0.7rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.main-nav a {
+    display: inline-block;
+    padding: 0.45rem 0.7rem;
+    border: 1px solid transparent;
+}
+
+.main-nav a:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    border: 1px groove #fefefe;
+    border-radius: 8px;
+    text-decoration: none;
+} 
+
+.main-nav {
+    padding-right: 1.5rem;
+}
+
+/* Macht dasselbe wie .main-nav a:hover 
+.menu a:hover {
+    text-decoration: none;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 8px;
+} */
+
+
+
+
+
+.hero {
+    padding: 3rem 0;
+    /*border-bottom: 1px groove #fefefe; border nur temporär */
+    /*background-color: rgba(0, 0, 0, 0.1); */
+}
+
+.hero-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 2rem;
+}
+
+.hero-text {
+    flex: 1 1 320px;
+}
+
+.hero-image {
+    flex: 1 1 280px;
+}
+
+.lead {
+    font-size: 1.2rem;
+
+}
+
+
+
+
+
+#about {
+    margin-top: 0.3rem;
+}
+
+
+
+
+
+.about {
+    border: 1px solid #fefefe;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    padding: 1.5rem 1rem 0 1.5rem
+}
+
+
+
+
+
+/*.bottomline {
+    border-bottom: 4px solid #333;
+    padding: 0.25rem;
+} */
+
+
+
+
+
+.card-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+    margin-top: 1.5rem;
+}
+
+.card {
+    flex: 1 1 240px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border: 1px solid #fefefe;
+    border-radius: 10px;
+    padding: 1.25rem;
+    box-shadow: 3px 3px 12px 2px rgba(0, 0, 0, 0.1);
+}
+
+.card h3 {
+    border-bottom: 1px solid #333;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    cursor: pointer;
+}
+
+
+
+
+
+.flugziele-liste {
+    background-color: rgba(255, 255, 255, 0.4);
+    border-left: 4px solid #fefefe;
+    padding: 1.25rem 1.25rem 1.25rem 2.25rem;
+    border-radius: 8px;
+    margin-left: 0;
+    box-shadow: 3px 3px 12px 2px rgba(0, 0, 0, 0.1);
+}
+
+#plain-img {
+    margin-bottom: 2rem;
+}
+
+
+
+
+
+.site-footer {
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 4rem 0 2rem;
+}
+
+.footer-inner {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: space-between;
+}
+
+.small {
+    font-size: 0.9rem;
+}
+
+
+
+
+
+
+
+
+/* ===========================
+   Responsives Design
+   =========================== */
+@media (max-width: 600px) {
+     body {
+        font-size: 1rem;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1.3rem;
+    }
+
+    h3 {
+        font-size: 1.1rem;
+    }
+
+
+    .site-header {
+        position: static;
+        box-shadow: none;
+        background-color: rgba(0, 0, 0, 0.1);
+    }
+
+    .header-inner {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .logo {
+        margin: 0.5rem auto;
+        padding: 0.6rem 4rem;
+    }
+
+    .main-nav .menu {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.25rem;
+    }
+
+    .main-nav a {
+        display: block;
+        padding: 0.65rem 0.85rem;
+        border: 1px solid rgba(255, 255, 2555, 0.2);
+        border-radius: 8px;
+        margin-right: 1rem;
+    }
+
+    .main-nav a:hover {
+        border-color: #fefefe;
+    }
+
+    .menu li:hover {
+        background-color: transparent;
+    }
+}
