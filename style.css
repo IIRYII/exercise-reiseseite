@@ -2,6 +2,10 @@
    LEK-10 Reisen & Flugziele
    ========================= */
 
+
+/* ===========================
+   Browser-Werte zurücksetzen
+   =========================== */   
 * {
     box-sizing: border-box;
     margin: 0;
@@ -11,7 +15,9 @@
 
 
 
-
+/* ====================
+   Basis Einstellungen
+   ==================== */
 html {
     scroll-behavior: smooth;
 }
@@ -69,7 +75,9 @@ ul, ol {
 
 
 
-
+/* ====================
+   Layout-Helfer
+   ==================== */
 .container {
     max-width: min(100% - 2.5rem, 1100px);
     margin: auto;
@@ -83,7 +91,9 @@ ul, ol {
 
 
 
-
+/* =====================
+   Logo & Navbar
+   ===================== */
 .site-header {
     position: sticky;
     top: 0;
@@ -93,6 +103,7 @@ ul, ol {
     background-color: rgba(0, 0, 0, 0.4);
 }
 
+/* Damit Inhalt der Sprungmarken nicht verdeckt wird */
 [id] {
     scroll-margin-top: 5.5rem;
 }
@@ -130,7 +141,7 @@ ul, ol {
     text-decoration: none;
 }
 
-/*.main-nav*/ .menu {
+.main-nav .menu {
     display: flex;
     flex-wrap: wrap;
     gap: 0.35rem 0.7rem;
@@ -150,7 +161,12 @@ ul, ol {
     border: 1px groove #fefefe;
     border-radius: 8px;
     text-decoration: none;
-} 
+}
+
+.main-nav a.active {
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+}
 
 .main-nav {
     padding-right: 1.5rem;
@@ -163,10 +179,26 @@ ul, ol {
     border-radius: 8px;
 } */
 
+/* ====================================================
+   Burger-Menü-Button (Basis, standardmäßig versteckt)
+   ==================================================== */
+.menu-toggle-btn {
+    display: none; /* nur in mobiler Ansicht sichtbar */
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    color: #fefefe;
+    cursor: pointer;
+    padding: 0.3rem 0.6rem;
+}
 
 
 
 
+
+/* =====================
+   Hero-Bereich
+   ===================== */
 .hero {
     padding: 3rem 0;
     /*border-bottom: 1px groove #fefefe; border nur temporär */
@@ -197,13 +229,12 @@ ul, ol {
 
 
 
+/* =====================
+   About-Section
+   ===================== */
 #about {
     margin-top: 0.3rem;
 }
-
-
-
-
 
 .about {
     border: 1px solid #fefefe;
@@ -211,10 +242,6 @@ ul, ol {
     border-radius: 8px;
     padding: 1.5rem 1rem 0 1.5rem
 }
-
-
-
-
 
 /*.bottomline {
     border-bottom: 4px solid #333;
@@ -225,6 +252,9 @@ ul, ol {
 
 
 
+/* =================================
+   Karten-Layout der Reisen-Section
+   ================================= */
 .card-grid {
     display: flex;
     flex-wrap: wrap;
@@ -254,6 +284,9 @@ ul, ol {
 
 
 
+/* ==================================
+   Flugziele-Section: Liste und Bild
+   ================================== */
 .flugziele-liste {
     background-color: rgba(255, 255, 255, 0.4);
     border-left: 4px solid #fefefe;
@@ -271,6 +304,9 @@ ul, ol {
 
 
 
+/* ====================
+   Footer
+   ==================== */
 .site-footer {
     background-color: rgba(0, 0, 0, 0.3);
     padding: 4rem 0 2rem;
@@ -316,25 +352,47 @@ ul, ol {
 
 
     .site-header {
-        position: static;
+        position: sticky;
+        top: 0;
         box-shadow: none;
         background-color: rgba(0, 0, 0, 0.1);
     }
 
     .header-inner {
-        flex-direction: column;
-        align-items: stretch;
+        flex-direction: row; /* Logo links, Menü rechts */
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
     }
 
     .logo {
-        margin: 0.5rem auto;
-        padding: 0.6rem 4rem;
+        margin: 0;
+        padding: 0.5rem 0.8rem;
+    }
+
+    /* Burger-Button sichtbar machen */
+    .menu-toggle-btn {
+        display: block;
+    }
+
+    /* Navigation standardmäßig ausblenden */
+    .main-nav {
+        display: none;
+        width: 100%;
+        order: 3;
+        padding-right: 0;
+    }
+
+    /* Wenn JS die Klasse .is-open hinzufügt: Navigation zeigen */
+    .main-nav.is-open {
+        display: block;
     }
 
     .main-nav .menu {
         flex-direction: column;
         align-items: stretch;
         gap: 0.25rem;
+        padding: 0.5rem 0;
     }
 
     .main-nav a {
@@ -347,9 +405,5 @@ ul, ol {
 
     .main-nav a:hover {
         border-color: #fefefe;
-    }
-
-    .menu li:hover {
-        background-color: transparent;
     }
 }

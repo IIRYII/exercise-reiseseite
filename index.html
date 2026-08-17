@@ -9,25 +9,31 @@
     </head>
 
     <body>
-       <main>
-             <!-- Logo und Navbar -->
+        <!-- Logo und Navbar -->
         <header class="site-header">
-            <div class=".container header-inner">
+            <div class="container header-inner">
                 <div class="logo">
                     <a href="index.html">Reisen&<span>Flugziele</span></a>
                 </div>
-                <nav class="main-nav" aria-label="Hauptnavigation">
+
+                <!-- Burger-Button für mobiles Menü -->
+                <button type="button" class="menu-toggle-btn" id="menuToggleBtn" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mainNav">
+                    ☰ 
+                </button>
+                
+                <nav class="main-nav" id="mainNav" aria-label="Hauptnavigation">
                     <ul class="menu">
                         <li><a href="index.html" class="active">Startseite</a></li>
                         <li><a href="#about">Über uns</a></li>
                         <li><a href="#reisen">Reisen</a></li>
                         <li><a href="#flugziele">Flugziele</a></li>
+                        <li><a href="kontakt.html">Kontakt</a></li>
                     </ul>
                 </nav>
             </div>
         </header> 
 
-
+        <main>
         <!-- Hero-Bereich -->
         <section class="hero">
             <div class="container hero-content">
@@ -169,9 +175,10 @@
                 </ol>
             </div>
         </section> 
-       </main>
-
-       <footer class="site-footer">
+        </main>
+       
+       
+        <footer class="site-footer">
             <div class="container footer-inner">
                 <div>
                     <strong>Reisen&Flugziele</strong>
@@ -187,5 +194,7 @@
                 </div>
             </div>
        </footer>
+
+       <script src="script.js"></script>
     </body>
 </html>
